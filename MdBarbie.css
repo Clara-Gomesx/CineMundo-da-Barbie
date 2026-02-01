@@ -1,0 +1,37 @@
+body {
+
+    text-align: center;
+    background-color: rgb(228, 2, 160);
+    background-image: url("https://wallpaperaccess.com/full/5176480.jpg"); /* caminho da imagem */
+    background-size: cover;   /* cobre toda a tela */
+    background-repeat: no-repeat; /* não repete a imagem */
+    background-attachment: fixed; /* fundo fixo ao rolar a página */
+  }
+
+h1{
+    background-color: rgb(255, 0, 170);
+}
+
+a{
+    background-size: rgb(255, 255, 255);
+    font-size: 20px; /* Define o tamanho da fonte como 20 pixels */
+}
+
+.fotoB {
+    width: 300px;   /* largura */
+    height: auto;   /* altura proporcional */
+    border-radius: 10px; /* cantos arredondados */
+  }
+
+ #descricao {
+    position: fixed; /* Fixa no rodapé da tela */
+    bottom: 0; /* Cola na parte inferior */
+    left: 0;
+    width: 100%; /* Ocupa toda a largura */
+    background-color: rgba(255, 105, 180, 0.7); /* Rosa Barbie com transparência (70%) */
+    color: white; /* Texto branco para contraste */
+    text-align: center; /* Centraliza o texto */
+    padding: 15px; /* Espaçamento interno */
+    font-size: 18px; /* Tamanho da fonte */
+    border-top: 2px solid #fff; /* Linha branca separando do conteúdo */
+}

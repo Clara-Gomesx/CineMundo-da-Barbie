@@ -1,0 +1,151 @@
+body { 
+    font-family: Arial, sans-serif; /* Fonte principal */ 
+    max-width: 800px; /* Largura máxima do conteúdo */ 
+    margin: 0 auto; /* Centraliza horizontalmente */ 
+    padding: 55px; /* Espaçamento interno */ 
+    background: linear-gradient(to bottom, #fd97db, #f8cbe6); /* Fundo rosa Barbie */ 
+    color: #333; /* Cor padrão do texto */ 
+    transition: all 0.3s ease; /* Transição suave para mudanças */
+ }
+
+h1 {
+    text-align: center; /* Centraliza o título */
+    color: #fff; /* Cor branca para o título */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);/* Sombra para destacar o texto */
+}
+
+#progress-bar { 
+    width: 100%; /* Barra ocupa toda a largura */ 
+    height: 10px; /* Altura da barra */ 
+    background-color: #ddd; /* Cor de fundo cinza claro */ 
+    border-radius: 5px; /* Bordas arredondadas */ 
+    margin-bottom: 10px; /* Espaço abaixo da barra */ 
+    overflow: hidden; /* Esconde conteúdo que ultrapasse os limites */ 
+}
+
+#progress-fill {
+    height: 100%; /* Preenche toda a altura da barra */
+    background-color:  #ff69b4; /* Barrinha de Progresso:Cor Rosa */
+    width: 0%; /* Começa vazia */
+    transition: width 0.3s ease; /* Animação suave ao preencher */
+}
+
+#progress-text { 
+    text-align: center; /* Texto centralizado */ 
+    font-weight: bold; /* Negrito */ 
+    margin-bottom: 20px; /* Espaço abaixo do texto */ 
+    color: #fff; /* Texto branco */
+ }
+
+.question {
+  margin-bottom: 20px; /* Espaço entre perguntas */ 
+  padding: 15px; /* Espaçamento interno */ 
+  border: 2px solid #ff69b4; /* Borda rosa */ 
+  border-radius: 10px; /* Bordas arredondadas */ 
+  background-color: #f8eff5; /* Fundo suave lilás/rosa claro */ 
+  opacity: 0; /* Inicialmente invisível */ 
+  transform: translateX(100%); /* Começa deslocada para a direita */ 
+  animation: slideIn 0.3s ease forwards; /* Animação de entrada */
+ }
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(100%); } /* Estado inicial: invisível e fora da tela */
+    to { opacity: 1; transform: translateX(0); } /* Estado final: visível e na posição correta */
+}
+
+.question.fade-out {
+    animation: slideOut 0.3s ease forwards; /* Animação de saída (precisa ser definida) */
+}
+
+@keyframes slideOut { 
+    from { opacity: 1; transform: translateX(0); } /* Estado inicial: visível e na posição normal */ 
+    to { opacity: 0; transform: translateX(-100%); } /* Estado final: invisível e deslocado para fora da tela à esquerda */ 
+} 
+
+.question h3 { 
+    margin-top: 0; /* Remove espaço superior do título da pergunta */ 
+    text-align: center; /* Centraliza o texto da pergunta */ 
+    color: #ff1493; /* Define cor rosa forte para o título */ 
+}
+
+.option { /* Caixinha de pergunta/opção */
+    display: flex; /* Define que o elemento será um container flexível, permitindo alinhar itens em linha ou coluna */ 
+    align-items: center; /* Alinha verticalmente os itens dentro do container flex (no eixo transversal) */ 
+    margin: 10px 0; /* Cria espaçamento externo: 10px em cima e embaixo, 0px nas laterais */ 
+    padding: 15px; /* Cria espaçamento interno de 15px em todos os lados do conteúdo */ 
+    border: 2px solid #ddd; /* Adiciona uma borda sólida de 2px com cor cinza clara (#ddd) */ 
+    border-radius: 5px; /* Arredonda os cantos da borda em 5px */ 
+    cursor: pointer; /* Muda o cursor para “mãozinha” quando passa por cima, indicando que é clicável */ 
+    transition: all 0.3s ease; /* Cria uma transição suave de 0.3s para qualquer mudança de estilo (ex: hover) */ 
+    background-color: #ffffff; /* Define a cor de fundo como branco */ 
+}
+
+.option:hover {
+    border-color: #ff69b4; /* Ao passar o mouse, muda a cor da borda para rosa */ 
+    box-shadow: 0 4px 8px rgba(255,105,180,0.3); /* Adiciona sombra rosa suave para destacar */ 
+}
+
+.option.selected {/* Cor ao selecionar a opção */
+    border-color: #ff69b4;/* Borda */
+    background-color: #fcbeeea4;/* Fundo */
+}
+
+.option.correct {/* Respostar corretas */
+    background-color: #d4edda; /* Verde claro */
+    color: #0dd33b; /* Texto verde */
+    border: 2px solid #c3e6cb; /* Borda verde suave */
+}
+
+.option.incorrect {/* Respostas incorretas */
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #d80f23; /* Texto vermelho */
+    border: 2px solid #f5c6cb; /* Borda vermelha suave */
+}
+
+button {
+    display: block; /* Botão ocupa linha inteira */ 
+    margin: 20px auto; /* Centraliza horizontalmente com margem em cima e embaixo */ 
+    padding: 12px 25px; /* Espaçamento interno do botão */ 
+    background-color: #ff1493; /* Fundo rosa forte */ 
+    color: white; /* Texto branco */ 
+    border: none; /* Remove borda padrão */ 
+    border-radius: 5px; /* Bordas arredondadas */ 
+    cursor: pointer; /* Cursor de mãozinha ao passar por cima */ 
+    transition: all 0.3s ease; /* Transição suave para efeitos */ 
+    font-size: 16px; /* Tamanho da fonte */ 
+}
+
+button:hover {
+    background-color: #c71585; /* Fundo muda para rosa escuro ao passar o mouse */ 
+    transform: scale(1.05); /* Botão cresce levemente para dar efeito de destaque */
+ }
+
+button:disabled {
+   background-color: #ccc; /* Fundo cinza quando desabilitado */ 
+   cursor: not-allowed; /* Cursor de bloqueio */ 
+   transform: none; /* Remove efeito de transformação */ 
+}
+
+#message {
+   text-align: center; /* Centraliza o texto da mensagem */ 
+   margin-top: 25px; /* Espaço acima da mensagem */ 
+   margin-bottom: 75px; /* Espaço abaixo da mensagem */ 
+   font-weight: bold; /* Texto em negrito */ 
+   opacity: 0; /* Inicialmente invisível */ 
+   animation: fadeIn 0.5s ease forwards; /* Animação para aparecer suavemente */ 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; } /* Estado inicial: invisível (totalmente transparente) */
+    to { opacity: 1; }   /* Estado final: visível (opacidade total) */
+}
+
+.result {
+    background-color: #ffffff; /* Fundo branco para destacar o bloco de resultado */
+    padding: 20px; /* Espaçamento interno em todos os lados */
+    border-radius: 10px; /* Bordas arredondadas em 10px */
+    border: 2px solid #ff69b4; /* Borda rosa para combinar com o tema Barbie */
+    margin-top: 20px; /* Espaço acima do bloco de resultado */
+    text-align: center; /* Centraliza todo o conteúdo dentro do bloco */
+    animation: fadeIn 1s ease; /* Aplica animação de entrada suave (fade in) em 1 segundo */
+}
